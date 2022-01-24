@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransferenciaService } from './services/transferencia.service';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferencias: any[]=[];
 
-  transferir($event) {
-    console.log($event);
+  constructor(private service: TransferenciaService){
 
-    const transferencia = {...$event, data: new Date()};
-    this.transferencias.push(transferencia);
   }
+
+
+
 }
